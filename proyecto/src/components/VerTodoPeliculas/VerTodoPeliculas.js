@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import Peliculas from '../Peliculas/Peliculas'
-import BuscadorFilter from '../BuscadorFiltro/BuscadorFiltro';
-import { options } from '../../utils/constants'
-import './styles.css'
+import BuscadorFiltro from '../BuscadorFiltro/BuscadorFiltro';
+import { options } from '../../utils/constants';
+
+
 
 let apiKey= "7d4b7de655aa19e767e9ef8b0e0359b5"
 let api= `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`
@@ -92,4 +93,4 @@ class VerTodoPeliculas extends Component {
   }
 }
 
-export default PeliculasTotales
+export default VerTodoPeliculas

@@ -8,7 +8,7 @@ let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&lang
 let bestRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
 
 
-class PeliculasContainer extends Component {
+class PeliculasContenedor extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -72,4 +72,4 @@ class PeliculasContainer extends Component {
   }
 }
 
-export default PeliculasContainer
+export default PeliculasContenedor

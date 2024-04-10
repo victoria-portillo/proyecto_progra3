@@ -1,7 +1,7 @@
 import './styles.css'
 import { Component } from "react"
-import { Link } from "react-router-dom" 
-import BuscadorFilter from '../BuscadorFiltro/BuscadorFiltro';
+
+
 
 
 class Peliculas extends Component{
@@ -36,9 +36,7 @@ class Peliculas extends Component{
           <p className="" onClick={() => this.descripcion ()}>{this.state.texto}</p>
                     {this.state.mostrar ? <h5 className="">{this.props.resumen}</h5> : ""}
            
-          <Link to={`/DetallePelicula/id/${this.props.id}`}>
-            <button type="" className="">Ir a detalle</button>
-            </Link>
+       
            
         </article>
         
@@ -47,4 +45,4 @@ class Peliculas extends Component{
     }
 }
 
-export default Peliculas
+export default Peliculas;
