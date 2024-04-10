@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Peliculas from '../Peliculas/Peliculas'
-import BuscadorFilter from '../BuscadorFilter/BuscadorFilter';
+import BuscadorFilter from '../BuscadorFiltro/BuscadorFiltro';
 import { options } from '../../utils/constants'
 import './styles.css'
 
@@ -68,7 +68,7 @@ class VerTodoPeliculas extends Component {
   render(){
     return (
       <>
-      <BuscadorFilter filtradoPeliculas={(titulo) => this.filtrarPeliculas(titulo)} />
+      <BuscadorFiltro filtradoPeliculas={(titulo) => this.filtrarPeliculas(titulo)} />
       <section className="" >
         {this.state.peliculasFiltradas.map((pelicula) => {
           return (
