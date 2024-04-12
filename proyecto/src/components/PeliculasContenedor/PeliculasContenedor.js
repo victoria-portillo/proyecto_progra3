@@ -1,75 +1,53 @@
-import React, {Component} from 'react'
-import Peliculas from '../Peliculas/Peliculas'
-import './styles.css'
+import React, { Component } from 'react';
+import Peliculas from '../Peliculas/Peliculas';
+import './styles.css';
 
-let apiKey= "7d4b7de655aa19e767e9ef8b0e0359b5"
-let api= `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`
-let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
-let bestRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
-
+let apiKey = "7d4b7de655aa19e767e9ef8b0e0359b5";
+let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 
 class PeliculasContenedor extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       peliculas: [],
-      backup:[],
-      page:1
-    }
+      backup: [],
+    };
   }
 
-  componentDidMount(){
-    this.extraerPeliculas()
+  componentDidMount() {
+    this.extraerPeliculas();
   }
 
-  extraerPeliculas(){
+  extraerPeliculas() {
     fetch(popular)
-    .then(resp => resp.json())
-    .then(data => this.setState({
-      peliculas: data.results,
-      backup: data.results
-    }))
-    .catch(err => console.log(err))
-  }
-  
-
-  filtrarPersonajes(nombre){
-    let personajesFiltrados = this.state.backup.filter((elm) => elm.name.toLowerCase().includes(nombre.toLowerCase()))
-    this.setState({
-      personajes: personajesFiltrados,
-    })
+      .then(resp => resp.json())
+      .then(data => this.setState({
+        peliculas: data.results,
+        backup: data.results
+      }))
+      .catch(err => console.log(err));
   }
 
-  render(){
+  render() {
     return (
-      <>
-       <section className=""  >
-        {
-          this.state.peliculas.length === 0 ? 
-          <img src= "../img/giphy.gif"
-           /> :
-          this.state.peliculas.map((pelicula, index)=> {
-            if (index < 5){
-              return(
-              <>
-              <Peliculas 
-                nombre={pelicula.title} 
-                imagen={pelicula.poster_path} 
-                descripcion={pelicula.release_date} 
-                id={pelicula.id} 
-                resumen={pelicula.overview}
-              />
-              </>
-              )
-            }
-          }
-          )
-        }
-      
+      <section>
+        {this.state.peliculas.length === 0 ? (
+          <img src="../img/giphy.gif" alt="Cargando" />
+        ) : (
+          this.state.peliculas.slice(0, 5).map((pelicula) => (
+            <Peliculas
+              key={pelicula.id}
+              nombre={pelicula.title}
+              imagen={pelicula.poster_path}
+              descripcion={pelicula.release_date}
+              id={pelicula.id}
+              resumen={pelicula.overview}
+            />
+          ))
+        )}
       </section>
-      </>
-    )
+    );
   }
 }
 
-export default PeliculasContenedor
+export default PeliculasContenedor;
