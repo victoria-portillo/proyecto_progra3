@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Peliculas from '../Peliculas/Peliculas';
-import './styles.css';
+import './style.css';
 
 let apiKey = "7d4b7de655aa19e767e9ef8b0e0359b5";
-let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
-class PeliculasContenedor extends Component {
+let topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
+class PeliculasTopRated extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class PeliculasContenedor extends Component {
   }
 
   extraerPeliculas() {
-    fetch(popular)
+    fetch(topRated)
       .then(resp => resp.json())
       .then(data => this.setState({
         peliculas: data.results,
@@ -49,4 +49,4 @@ class PeliculasContenedor extends Component {
   }
 }
 
-export default PeliculasContenedor;
+export default PeliculasTopRated;

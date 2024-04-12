@@ -1,0 +1,24 @@
+.subtitulo{
+    margin: 5px;
+    margin-top: 50px;
+    padding: 5px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 35px;
+}
+.botonExplorar{
+    background-color: white; /* Fondo blanco */
+    color: black;
+    margin-bottom: 4px;    
+    margin-left: 10px; /* Para que quede mas lejos del campo */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 5px 20px; /* Espaciado interno para el botón */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+/*--Responsive mobile last--*/
+
+/* Media Queries*/
+
+@media(max-width: 420px){
+}

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import BuscadorFiltro from '../../components/BuscadorFiltro/BuscadorFiltro';
 import PeliculasContenedor from '../../components/PeliculasContenedor/PeliculasContenedor';
 import VerTodoPeliculas from '../../components/VerTodoPeliculas/VerTodoPeliculas';
+import './style.css';
+import PeliculasTopRated from '../../components/PeliculasTopRated/PeliculasTopRated';
 
 let options = {}; // Asegúrate de definir esto correctamente en tus constantes
 
@@ -31,8 +33,11 @@ class Home extends Component {
           <main></main> :
           <main><VerTodoPeliculas peli={this.state.busqueda} /></main>
         }
-        <h2>Peliculas populares <Link to='/Peliculas'><button className='botonExplorar'>Explorar todas</button></Link></h2>
+        <h2 className='subtitulo'>Peliculas populares <Link to='/Peliculas'><button className='botonExplorar'>Explorar todas</button></Link></h2>
         <PeliculasContenedor />
+        
+        <h2 className='subtitulo'>Peliculas Top Rated <Link to='/Peliculas'><button className='botonExplorar'>Explorar todas</button></Link></h2>
+        <PeliculasTopRated />
       </section>
     );
   }
