@@ -57,6 +57,50 @@ img{
   border-radius: 10px;
 }
 
+
+.verMas {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.nombrePeli, .resumen {
+  color: white; /* Texto blanco */
+  text-align: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 30px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  border-radius: 15px; /* Bordes redondeados para el contenedor */
+}
+.descripcionOculta {
+  font-size: 14px;
+  text-align: center;
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  cursor: pointer; /* Cursor como puntero para indicar que es clickeable */
+  padding: 10px; /* Añadir algo de padding para mejor apariencia */
+  border-radius: 5px; /* Bordes redondeados */
+  margin-top: 10px; /* Espacio arriba del botón */
+  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.descripcionOculta:hover {
+  background-color: grey; /* Cambio de color al pasar el mouse para mejor feedback */
+}
+
 /*--Responsive mobile last--*/
 
 /* Media Queries*/
