@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./screens/Home/Home";
 import Peliculas from "./components/Peliculas/Peliculas";
+import DetallePelicula from './screens/DetallePelicula/DetallePelicula';
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Routes> {/* Use Routes instead of Switch */}
         <Route path="/" element={<Home />} exact /> {/* Update the Route component to use element prop */}
         <Route path="/peliculas" element={<Peliculas />} />
+        <Route path={'/DetallePelicula/id/:id'} element={<DetallePelicula />} />
       </Routes>
 
       <Footer />
