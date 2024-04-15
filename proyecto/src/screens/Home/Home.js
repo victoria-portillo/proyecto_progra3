@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import BuscadorFiltro from '../../components/BuscadorFiltro/BuscadorFiltro';
+import Buscador from '../../components/Buscador/Buscador';
 import PeliculasContenedor from '../../components/PeliculasContenedor/PeliculasContenedor';
 import VerTodoPeliculas from '../../components/VerTodoPeliculas/VerTodoPeliculas';
 import './style.css';
@@ -28,7 +28,7 @@ class Home extends Component {
   render() { 
     return (
       <section>
-        <BuscadorFiltro filtroPeliculas={(input) => this.filtroPeliculas(input)} />
+        <Buscador filtroPeliculas={(input) => this.filtroPeliculas(input)} />
         {this.state.busqueda.length === 0 ?
           <main></main> :
           <main><VerTodoPeliculas peli={this.state.busqueda} /></main>

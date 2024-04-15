@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import BuscadorFiltro from '../BuscadorFiltro/BuscadorFiltro';
+import Buscador from '../Buscador/Buscador';
 import PeliculasContenedor from '../PeliculasContenedor/PeliculasContenedor';
 
 import './styles.css'
 
 
-class ResultadoDeBusqueda extends Component {
+class ResultadoBusqueda extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            busqueda: this.props.match.params.search,
+            search: this.props.match.params.search,
             resultados: [],
         }
     }
@@ -17,9 +17,9 @@ class ResultadoDeBusqueda extends Component {
     componentDidMount() {
         fetch(`https://api.themoviedb.org/3/discover/movie?${this.state.search}`)
             .then((response) => response.json())
-            .then((resultadosBusqueda) =>
+            .then((resultados_busqueda) =>
                 this.setState({
-                    resultados: resultadosBusqueda.data
+                    resultados: resultados_busqueda.data
                 }))
             .catch(error => console.log(error));
     }
@@ -27,11 +27,11 @@ class ResultadoDeBusqueda extends Component {
     render() {
         return (
             <>
-                <BuscadorFiltro />
+                <Buscador/>
                 {
                     this.state.resultados.length > 0 ?
-                    <div className=''>
-                        <ul className=''>
+                    <div className='cajaPadre'>
+                        <ul className='cajaPadre'>
                             <PeliculasContenedor
                                 album={false}
                                 value={this.state.resultados.map(resultado => ({
@@ -46,10 +46,10 @@ class ResultadoDeBusqueda extends Component {
                         </div> :
                         <h3>Loading..</h3>
                 }
-                <BuscadorFiltro />
+                <Buscador />
             </>
         )
     }
 }
 
-export default ResultadoDeBusqueda;
+export default ResultadoBusqueda;

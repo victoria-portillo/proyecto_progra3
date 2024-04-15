@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./screens/Home/Home";
 import Peliculas from "./components/Peliculas/Peliculas";
 import DetallePelicula from './screens/DetallePelicula/DetallePelicula';
+import ResultadoBusqueda from './screens/ResultadoBusqueda/ResultadoBusqueda'
 import NotFound from './screens/NotFound/NotFound';  // Asegúrate de que la ruta de importación sea correcta
 import VerTodoPelis from './screens/VerTodoPelis/VerTodoPelis';
 import VerTodoRated from './screens/VerTodoRated/VerTodoRated';
@@ -22,6 +23,7 @@ function App() {
           <Route path={'/VerTodoRated'} component={VerTodoRated} />
           <Route path={'/Favoritos'} component={Favoritos} />
           <Route path="/DetallePelicula/id/:id" component={DetallePelicula} />
+          <Route path={'/search/:search'} component = {ResultadoBusqueda}/>
           <Route component={NotFound} /> {/* Esta línea manejará cualquier ruta no definida */}
         </Switch>
         <Footer />

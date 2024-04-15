@@ -18,7 +18,7 @@ class Buscador extends Component{
       regularCambios(e) {
         this.setState(
           {
-            busqueda: evento.target.value
+            busqueda: e.target.value
           }
         );
       }
