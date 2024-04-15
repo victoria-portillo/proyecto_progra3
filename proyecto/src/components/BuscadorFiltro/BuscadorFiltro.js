@@ -17,7 +17,7 @@ class BuscadorFiltro extends Component {
           {
             palabraClave: e.target.value
           },
-          ()=> this.props.filtradoPeliculas(this.state.palabraClave)
+          ()=> this.props.filtrarPeliculas(this.state.palabraClave)
           )
       }
 
