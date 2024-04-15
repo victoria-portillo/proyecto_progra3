@@ -1,65 +1,95 @@
-import React, { Component } from 'react';
-import Peliculas from '../Peliculas/Peliculas';
+import React, {Component} from 'react'
+import Peliculas from '../Peliculas/Peliculas'
+import { options } from '../../utils/constants'
+import './style.css'
 import BuscadorFiltro from '../BuscadorFiltro/BuscadorFiltro';
 
-let apiKey = "7d4b7de655aa19e767e9ef8b0e0359b5";
-let peliculasPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+let apiKey= "7d4b7de655aa19e767e9ef8b0e0359b5"
+let api= `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`
+let peliculasPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+
 
 class VerTodoPeliculas extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props){
+    super(props)
     this.state = {
       peliculas: [],
-      peliculasFiltradas: [],
-      buscador: '',
-    };
+      filtradas: [],
+      page:1,
+      filtroBusqueda:'',
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.movies !== prevProps.movies) {
+      this.setState({
+        filtradas: this.props.movies,
+      });
+    }
+  }
+  
+
+  componentDidMount(){
+    this.setState({
+      filtradas: this.props.movies,
+    });
+    this.traerPeliculas()
   }
 
-  componentDidMount() {
-    this.extraerPeliculas();
-  }
+  
 
-  extraerPeliculas() {
-    fetch(peliculasPopulares)
+  traerPeliculas(){
+    fetch(peliculasPopulares, options)
       .then(resp => resp.json())
       .then(data => this.setState({
         peliculas: data.results,
-        peliculasFiltradas: data.results
+        filtradas: data.results
       }))
-      .catch(err => console.log(err));
+    .catch(err => console.log(err))
   }
-
-  filtradoPeliculas(titulo) {
-    const filtro = titulo.toLowerCase();
-    const filtradas = filtro ? this.state.peliculas.filter(pelicula => pelicula.title.toLowerCase().includes(filtro)) : this.state.peliculas;
+  
+  filtrarPeliculas(title){
+    const filtroMin = title.toLowerCase(); // Convertir el filtro a minúsculas
+    if (filtroMin === '') {
+      this.setState({
+        filtradas: this.state.peliculas,
+        filtroBusqueda: title
+      });
+    } else {
     
+    let peliculasFiltradas = this.state.filtradas.filter((elm)=> elm.title.toLowerCase().includes(filtroMin))
+    console.log(peliculasFiltradas );
     this.setState({
-      peliculasFiltradas: filtradas,
-      buscador: titulo,
-    });
-  }
+        filtradas: peliculasFiltradas,
+        filtroBusqueda: title, // Actualiza el filtro de búsqueda en el estado
+    })}
+}
 
-  render() {
+
+  render(){
     return (
       <>
-        <BuscadorFiltro filtradoPeliculas={(titulo) => this.filtradoPeliculas(titulo)} />
-        <section>
-          {this.state.peliculasFiltradas.map((pelicula) => (
-            <div key={pelicula.id}>
+      <BuscadorFiltro filtrarPeliculas={(title) => this.filtrarPeliculas(title)} />
+      <section className="cajapadre" id="peliculasPopu">
+        {this.state.filtradas.map((pelicula) => {
+          return (
+            <div className='characters-container' key={pelicula.id}>
               <Peliculas
                 nombre={pelicula.title}
                 imagen={pelicula.poster_path}
                 descripcion={pelicula.release_date}
                 id={pelicula.id}
-                overview={pelicula.overview}
-                TraerMasPeliculas={this.props.TraerMasPeliculas}
+                resumen={pelicula.overview}
+                TraerMasMovies={this.props.TraerMasMovies}
               />
             </div>
-          ))}
-        </section>
-      </>
-    );
+            
+          );
+        })}
+       
+      </section>
+    </>
+    )
   }
 }
 
-export default VerTodoPeliculas;
+export default VerTodoPeliculas

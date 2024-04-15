@@ -37,7 +37,7 @@ class Peliculas extends Component {
                 </article>
             </>
         )
-    }   
+    }    
 }
 
 export default Peliculas;

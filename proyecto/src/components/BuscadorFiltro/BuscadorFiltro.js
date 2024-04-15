@@ -24,8 +24,8 @@ class BuscadorFiltro extends Component {
     render() {
         return (
           <>
-            <form className="" onSubmit={(e)=> this.evitarSubmit(e)}>
-                <input className="" placeholder="Ingresa busqueda" type="text" onChange={(e)=>this.regularCambios(e)} value={this.state.palabraClave} />
+            <form className="formulario" onSubmit={(e)=> this.evitarSubmit(e)}>
+                <input className="busqueda" placeholder="Ingresa busqueda" type="text" onChange={(e)=>this.regularCambios(e)} value={this.state.palabraClave} />
                 <button className='button'>Buscar</button>
             </form>
             </>
