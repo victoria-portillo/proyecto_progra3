@@ -1,0 +1,27 @@
+.favContainer{
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 500px;
+    box-sizing: border-box;
+}
+.cajapadre{
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  *{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+    background-color: black;
+    color: white;}
+ 

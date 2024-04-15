@@ -10,7 +10,7 @@ export default function Header() {
             <img src="../img/panda.png" className="logo" alt="" />
             <div className="headera">
             <Link  to="/"><h1>Home</h1></Link>
-            <Link  to="/favoritos"><h1>Favoritos</h1></Link>
+            <Link  to="/Favoritos"><h1>Favoritos</h1></Link>
             <Link  to="/Peliculas"><h1>Películas</h1></Link>
             </div>
         </nav>
