@@ -12,31 +12,36 @@ class Peliculas extends Component {
     }
 
     descripcion = () => {
-        this.setState(prevState => ({
-            mostrar: !prevState.mostrar,
-            mensaje: prevState.mostrar ? "Ver descripción" : "Ocultar descripción"
-        }));
+     
+        const { mostrar } = this.state;
+
+   
+        this.setState({
+            mostrar: !mostrar,
+            mensaje: mostrar ? "Ocultar descripción" : "Ver descripción"
+        });
     }
 
-        
-
     render() {
+        const { imagen, nombre, resumen, id } = this.props; 
+        const { mostrar, mensaje } = this.state;           
+
         return (
             <>
                 <article>
-                    <img src={`https://image.tmdb.org/t/p/w500/${this.props.imagen}`} 
-                    alt={this.props.nombre} />
-                    <p className="nombrePeli">{this.props.nombre}</p>
+                    <img src={`https://image.tmdb.org/t/p/w500/${imagen}`} 
+                    alt={nombre} />
+                    <p className="nombrePeli">{nombre}</p>
                     <p className="descripcionOculta" onClick={this.descripcion}>
-                        {this.state.mensaje}
+                        {mensaje}
                     </p>
-                    {this.state.mostrar ? <h5 className="resumen">{this.props.resumen}</h5> : null}
-                    <Link to={`/DetallePelicula/id/${this.props.id}`}>
+                    {mostrar ? <h5 className="resumen">{resumen}</h5> : null}
+                    <Link to={`/DetallePelicula/id/${id}`}>
                         <button type="button" className="verMas">Ir a detalle</button>
                     </Link>
                 </article>
             </>
-        )
+        );
     }    
 }
 
