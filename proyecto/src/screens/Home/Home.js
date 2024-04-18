@@ -30,14 +30,14 @@ class Home extends Component {
       <section>
         <Buscador filtroPeliculas={(input) => this.filtroPeliculas(input)} />
         {this.state.busqueda.length === 0 ?
-          <main></main> :
+          <main> </main> :
           <main><VerTodoPeliculas peli={this.state.busqueda} /></main>
         }
         <h2 className='subtitulo'>Peliculas populares <Link to='/VerTodoPelis'><button className='botonExplorar'>Explorar todas</button></Link></h2>
         <PeliculasContenedor />
         
         <h2 className='subtitulo'>Peliculas Top Rated <Link to='/VerTodoRated'><button className='botonExplorar'>Explorar todas</button></Link></h2>
-        <PeliculasTopRated />
+        <PeliculasTopRated  />
       </section>
     );
   }

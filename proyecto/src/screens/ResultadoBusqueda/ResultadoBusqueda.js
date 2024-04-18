@@ -51,7 +51,8 @@ class ResultadoBusqueda extends Component {
                             )                        
                         }
                         </ul> :
-                                                 <h3>Loading..</h3>
+                                                  <img src= "../img/giphy.gif" alt="Trayendo Peliculas" /> 
+                                              
                 }
             </>
         )
