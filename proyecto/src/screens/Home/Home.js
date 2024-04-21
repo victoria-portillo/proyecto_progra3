@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import Buscador from '../../components/Buscador/Buscador';
-import PeliculasContenedor from '../../components/PeliculasContenedor/PeliculasContenedor';
-import VerTodoPeliculas from '../../components/VerTodoPeliculas/VerTodoPeliculas';
-import './style.css';
-import PeliculasTopRated from '../../components/PeliculasTopRated/PeliculasTopRated';
 
-let options = {}; // Asegúrate de definir esto correctamente en tus constantes
+import "./style.css";
+
+import { Link } from "react-router-dom";
+
+import PeliculasTopRated from "../../components/PeliculasTopRated/PeliculasTopRated";
+
+import PeliculasContenedor from "../../components/PeliculasContenedor/PeliculasContenedor";
+
+import VerTodoPeliculas from "../../components/VerTodoPeliculas/VerTodoPeliculas";
+
+import Buscador from "../../components/Buscador/Buscador";
+
+
+let options = {}; 
 
 class Home extends Component {
   constructor(props) {
@@ -16,8 +23,8 @@ class Home extends Component {
     };
   }
 
-  filtroPeliculas(input) {
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${input}&include_adult=false&language=en-US&page=1`, options)
+  filtroDePeliculas(elemento) {
+    fetch(`https://api.themoviedb.org/3/search/movie?query=${elemento}&include_adult=false&language=en-US&page=1`, options)
       .then(resp => resp.json())
       .then(data => this.setState({
         busqueda: data.results
@@ -28,7 +35,8 @@ class Home extends Component {
   render() { 
     return (
       <section>
-        <Buscador filtroPeliculas={(input) => this.filtroPeliculas(input)} />
+        <Buscador filtroDePeliculas={(elemento) => this.filtroDePeliculas(elemento)} />
+        
         {this.state.busqueda.length === 0 ?
           <main> </main> :
           <main><VerTodoPeliculas peli={this.state.busqueda} /></main>

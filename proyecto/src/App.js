@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./screens/Home/Home";
 import Peliculas from "./components/Peliculas/Peliculas";
-import DetallePelicula from './screens/DetallePelicula/DetallePelicula';
+import PeliculaDetalle from './screens/PeliculaDetalle/PeliculaDetalle';
 import ResultadoBusqueda from './screens/ResultadoBusqueda/ResultadoBusqueda'
 import NotFound from './screens/NotFound/NotFound';  // Asegúrate de que la ruta de importación sea correcta
 import VerTodoPelis from './screens/VerTodoPelis/VerTodoPelis';
@@ -22,8 +22,8 @@ function App() {
           <Route path={'/VerTodoPelis'} component={VerTodoPelis} />
           <Route path={'/VerTodoRated'} component={VerTodoRated} />
           <Route path={'/Favoritos'} component={Favoritos} />
-          <Route path="/DetallePelicula/id/:id" component={DetallePelicula} />
-          <Route path={'/search/:search'} component = {ResultadoBusqueda}/>
+          <Route path="/PeliculaDetalle/id/:id" component={PeliculaDetalle} />
+          <Route path={'/buscar/:busqueda'} component = {ResultadoBusqueda}/>
           <Route component={NotFound} /> {/* Esta línea manejará cualquier ruta no definida */}
         </Switch>
         <Footer />

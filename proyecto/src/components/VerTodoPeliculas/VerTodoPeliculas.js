@@ -1,12 +1,18 @@
-import React, {Component} from 'react'
-import Peliculas from '../Peliculas/Peliculas'
-import { options } from '../../utils/constants'
-import './style.css'
+import React, {Component} from 'react';
+
+import "./style.css";
+
+import { options } from "../../utils/constants";
+
+import Peliculas from "../Peliculas/Peliculas";
+
 import BuscadorFiltro from '../BuscadorFiltro/BuscadorFiltro';
 
-let apiKey= "7d4b7de655aa19e767e9ef8b0e0359b5"
-let api= `https://api.themoviedb.org/3/movie/76341?api_key=${apiKey}`
-let peliculasPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+let claveApi= "7d4b7de655aa19e767e9ef8b0e0359b5";
+
+let api= `https://api.themoviedb.org/3/movie/76341?api_key=${claveApi}`;
+
+let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${claveApi}&language=en-US&page=1`;
 
 
 class VerTodoPeliculas extends Component {
@@ -14,15 +20,15 @@ class VerTodoPeliculas extends Component {
     super(props)
     this.state = {
       peliculas: [],
-      filtradas: [],
-      page:1,
+      filtro: [],
+      pagina: 1,
       filtroBusqueda:'',
     }
   }
   componentDidUpdate(prevProps) {
     if (this.props.movies !== prevProps.movies) {
       this.setState({
-        filtradas: this.props.movies,
+        filtro: this.props.movies,
       });
     }
   }
@@ -30,37 +36,37 @@ class VerTodoPeliculas extends Component {
 
   componentDidMount(){
     this.setState({
-      filtradas: this.props.movies,
+      filtro: this.props.movies,
     });
-    this.traerPeliculas()
+    this.extraerPeliculas()
   }
 
   
 
-  traerPeliculas(){
-    fetch(peliculasPopulares, options)
+  extraerPeliculas(){
+    fetch(popular, options)
       .then(resp => resp.json())
       .then(data => this.setState({
         peliculas: data.results,
-        filtradas: data.results
+        filtro: data.results
       }))
     .catch(err => console.log(err))
   }
   
-  filtrarPeliculas(title){
-    const filtroMin = title.toLowerCase(); // Convertir el filtro a minúsculas
-    if (filtroMin === '') {
+  pelisFiltrador(titulo){
+    const convertirMin = titulo.toLowerCase(); // Convertir el filtro a minúsculas
+    if ( convertirMin === '') {
       this.setState({
-        filtradas: this.state.peliculas,
-        filtroBusqueda: title
+        filtro: this.state.peliculas,
+        filtroBusqueda: titulo
       });
     } else {
     
-    let peliculasFiltradas = this.state.filtradas.filter((elm)=> elm.title.toLowerCase().includes(filtroMin))
-    console.log(peliculasFiltradas );
+    let filtroPeliculas = this.state.filtro.filter((elm)=> elm.titulo.toLowerCase().includes(convertirMin))
+    console.log(filtroPeliculas);
     this.setState({
-        filtradas: peliculasFiltradas,
-        filtroBusqueda: title, // Actualiza el filtro de búsqueda en el estado
+        filtro: filtroPeliculas,
+        filtroBusqueda: titulo, // Actualiza el filtro de búsqueda en el estado
     })}
 }
 
@@ -68,18 +74,18 @@ class VerTodoPeliculas extends Component {
   render(){
     return (
       <>
-      <BuscadorFiltro filtrarPeliculas={(title) => this.filtrarPeliculas(title)} />
+      <BuscadorFiltro pelisFiltrador={(titulo) => this.pelisFiltrador(titulo)} />
       <section className="cajapadre" id="peliculasPopu">
-        {this.state.filtradas.map((pelicula) => {
+        {this.state.filtro.map((pelicula) => {
           return (
             <div className='characters-container' key={pelicula.id}>
               <Peliculas
                 nombre={pelicula.title}
                 imagen={pelicula.poster_path}
-                descripcion={pelicula.release_date}
+                fechaEstreno={pelicula.release_date}
                 id={pelicula.id}
                 resumen={pelicula.overview}
-                TraerMasMovies={this.props.TraerMasMovies}
+                cargarPelis={this.props.cargarPelis}
               />
             </div>
             
@@ -92,4 +98,4 @@ class VerTodoPeliculas extends Component {
   }
 }
 
-export default VerTodoPeliculas
+export default VerTodoPeliculas;

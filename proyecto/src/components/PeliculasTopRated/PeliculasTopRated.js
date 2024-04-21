@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import Peliculas from '../Peliculas/Peliculas';
-import './style.css';
 
-let apiKey = "7d4b7de655aa19e767e9ef8b0e0359b5";
-let topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`
+import "./style.css";
+
+import Peliculas from "../Peliculas/Peliculas";
+
+
+let claveApi = "7d4b7de655aa19e767e9ef8b0e0359b5";
+
+let topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${claveApi}&language=en-US&page=1`;
+
+
 class PeliculasTopRated extends Component {
   constructor(props) {
     super(props);

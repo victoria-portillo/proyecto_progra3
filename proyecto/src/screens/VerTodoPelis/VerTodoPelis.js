@@ -1,8 +1,14 @@
-import React, { Component } from 'react'
-import { options } from '../../utils/constants'
-import VerTodoPeliculas from '../../components/VerTodoPeliculas/VerTodoPeliculas'
-let apiKey= "7d4b7de655aa19e767e9ef8b0e0359b5"
-let peliculasPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+import React, { Component } from 'react';
+
+import { options } from "../../utils/constants";
+
+import VerTodoPeliculas from "../../components/VerTodoPeliculas/VerTodoPeliculas";
+
+
+let claveApi= "7d4b7de655aa19e767e9ef8b0e0359b5";
+
+let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${claveApi}&language=en-US&page=1`;
+
 
 class VerTodoPelis extends Component {
     constructor(props){
@@ -15,7 +21,7 @@ class VerTodoPelis extends Component {
     }
 
   componentDidMount(){
-    fetch(peliculasPopulares, options) //poner todas las peliculas
+    fetch(popular, options) //poner todas las peliculas
         .then(response => response.json())
         .then(data => this.setState({
           pelicula: data.results,
@@ -56,4 +62,4 @@ render(){
   )
 }}
 
-export default VerTodoPelis
+export default VerTodoPelis;

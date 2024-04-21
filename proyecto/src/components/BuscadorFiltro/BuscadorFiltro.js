@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
 class BuscadorFiltro extends Component {
     constructor(props) {
@@ -7,26 +8,35 @@ class BuscadorFiltro extends Component {
           palabraClave: ''
         };
       }
-    evitarSubmit(e){
+
+
+    noSubmit(e){
+
         e.preventDefault()
         
       }
 
     regularCambios(e) {
+
         this.setState(
           {
             palabraClave: e.target.value
           },
-          ()=> this.props.filtrarPeliculas(this.state.palabraClave)
+
+          ()=> this.props.pelisFiltrador(this.state.palabraClave)
+
           )
       }
 
-    render() {
-        return (
-          <>
-            <form className="formulario" onSubmit={(e)=> this.evitarSubmit(e)}>
-                <input className="busqueda" placeholder="Ingresa busqueda" type="text" onChange={(e)=>this.regularCambios(e)} value={this.state.palabraClave} />
-                <button className='button'>Buscar</button>
+    render() 
+     { return (<>
+
+            <form className="formulario" onSubmit={(e)=> this.noSubmit(e)}>
+
+            <input className="busqueda" placeholder="Ingresar busqueda" type="text" onChange={(e)=>this.regularCambios(e)} value={this.state.palabraClave} />
+
+            <button className='button'>Buscar</button>
+            
             </form>
             </>
         )

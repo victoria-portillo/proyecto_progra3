@@ -1,110 +1,78 @@
-article{
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    padding: 30px;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-
-
-}
-img{
-   height: 200px; 
-  width: 150px;
-  border-radius: 15px;
-  
-}
-.nombrePeli{
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size:17px;
-  text-align: center;
-  color: white;
-}
-
-
-.verMas {
-  background-color: purple;
-  color: white;
-  height: 40px;
-  width: 100px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-
-}
-.descripcionOculta{
-  font-size: 14px;
-  text-align: center;
-}
-.resumen{
-  font-size: 14px;
-  text-align: center;
-
-}
-.botonFavHome{
-  background-color: purple;
-  color: white;
-  height: 38px;
-  width: 90px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-
-.verMas {
-  background-color: black; /* Fondo negro */
-  color: white; /* Texto blanco */
-  height: 40px;
-  width: 100px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.nombrePeli, .resumen {
-  color: white; /* Texto blanco */
-  text-align: center;
-}
-
 article {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
-  padding: 30px;
-  width: 200px;
-  justify-content: center;
   align-items: center;
-  background-color: black; /* Fondo negro */
-  color: white; /* Texto blanco */
-  border-radius: 15px; /* Bordes redondeados para el contenedor */
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  width: 60%;
+  max-width: 200px; /* Ajusta al tamaño deseado */
+  background-color: #f8f9fa; /* Fondo claro */
+  color: #212529; /* Texto oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+  transition: transform 0.3s; /* Transición suave para hover */
 }
-.descripcionOculta {
-  font-size: 14px;
+
+article:hover {
+  transform: translateY(-5px); /* Elevación ligera al pasar el mouse */
+}
+
+img {
+  width: 100%; /* Responsive width */
+  height: auto; /* Mantener la proporción */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.nombrePeli {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px; /* Tamaño de fuente más grande */
   text-align: center;
-  background-color: black; /* Fondo negro */
-  color: white; /* Texto blanco */
-  cursor: pointer; /* Cursor como puntero para indicar que es clickeable */
-  padding: 10px; /* Añadir algo de padding para mejor apariencia */
-  border-radius: 5px; /* Bordes redondeados */
-  margin-top: 10px; /* Espacio arriba del botón */
-  transition: background-color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.descripcionOculta {
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 8px;
+  background-color: #e9ecef; /* Fondo gris claro */
+  color: #495057; /* Texto gris oscuro */
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s;
 }
 
 .descripcionOculta:hover {
-  background-color: grey; /* Cambio de color al pasar el mouse para mejor feedback */
+  background-color: #ae58c4; /* Cambio de color al pasar el mouse */
 }
 
-/*--Responsive mobile last--*/
-
-/* Media Queries*/
-
-@media(max-width: 420px){
+.resumen {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: #343a40; /* Texto un poco más oscuro */
 }
 
+.verMas {
+  margin-top: 15px;
+  background-color: #9638b3; /* Azul brillante */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.verMas:hover {
+  background-color: #a84cb4; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Media Queries para adaptar a dispositivos móviles */
+@media (max-width: 600px) {
+  article {
+    padding: 15px;
+    margin: 10px;
+  }
+}

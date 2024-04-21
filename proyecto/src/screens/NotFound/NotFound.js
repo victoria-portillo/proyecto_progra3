@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-export default function index() {
+function index() 
+{
   return (
     <div>ERROR 404</div>
-  )
-}
+  ) 
+};
+
+export default index ;

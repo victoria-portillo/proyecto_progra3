@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import Buscador from '../Buscador/Buscador';
-import PeliculasContenedor from '../PeliculasContenedor/PeliculasContenedor';
 
-import './styles.css'
+import "./styles.css";
+
+import Buscador from '../Buscador/Buscador';
+
+import PeliculasContenedor from '../PeliculasContenedor/PeliculasContenedor';
 
 
 class ResultadoBusqueda extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: this.props.match.params.search,
+            busqueda: this.props.match.params.busqueda,
             resultados: [],
         }
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/discover/movie?${this.state.search}`)
+        fetch(`https://api.themoviedb.org/3/discover/movie?${this.state.busqueda}`)
             .then((response) => response.json())
-            .then((resultados_busqueda) =>
+            .then((resultadosBusqueda) =>
                 this.setState({
-                    resultados: resultados_busqueda.data
+                    resultados: resultadosBusqueda.data
                 }))
             .catch(error => console.log(error));
     }
@@ -44,7 +46,7 @@ class ResultadoBusqueda extends Component {
                             
                         </ul>
                         </div> :
-                        <h3>Loading..</h3>
+                        <h3>Cargando</h3>
                 }
                 <Buscador />
             </>

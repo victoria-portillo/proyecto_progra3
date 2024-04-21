@@ -1,0 +1,84 @@
+/* Contenedor general para detalles de la película */
+.sectionDetalle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px; /* Ajusta la brecha si necesitas menos espacio entre los componentes */
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.character-card {
+  flex-basis: 50%; /* Ajustado para coincidir con el ancho de la caja de texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.character-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cajahijapelis {
+  
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Menor espacio entre bloques de texto */
+}
+
+.titulo, .subtitulo {
+  margin-bottom: 8px; /* Espacio reducido entre bloques de texto */
+}
+
+.titulo {
+  font-size: 28px; /* Tamaño de fuente grande para el título */
+  font-weight: bold;
+  color: #0056b3; /* Color azul más oscuro */
+}
+
+.subtitulo {
+  font-size: 18px; /* Tamaño de fuente adecuado para los subtítulos */
+  color: #555;
+  line-height: 1.4; /* Altura de línea ajustada para menos espacio */
+}
+
+button {
+  padding: 12px 18px; /* Padding del botón */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Tamaño de fuente más grande para el botón */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para pantalla de carga */
+.container img {
+  display: block;
+  margin: auto;
+  width: 50%; /* Ajustar el tamaño de la imagen de carga si es necesario */
+}
+
+@media (max-width: 768px) {
+  .sectionDetalle {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .character-card, .cajahijapelis {
+      flex-basis: 100%; /* Ambos se expanden para llenar el ancho en pantallas pequeñas */
+  }
+}

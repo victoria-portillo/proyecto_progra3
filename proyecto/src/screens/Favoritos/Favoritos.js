@@ -1,6 +1,9 @@
-import React, { Component } from 'react'
-import FavoritosContenedor from '../../components/FavoritosContenedor/FavoritosContenedor'
-import './style.css';
+import React, { Component } from 'react';
+
+import "./style.css";
+
+import FavoritosContenedor from "../../components/FavoritosContenedor/FavoritosContenedor";
+
 
 
 class Favoritos extends Component {
@@ -8,18 +11,18 @@ class Favoritos extends Component {
   constructor(props){
     super(props)
     this.state = {
-      favoritos: [],
+      favoritos: []
 
     }
   }
 
   componentDidMount(){
-    let storageFavs = localStorage.getItem('favoritos')
+    let guardarFavoritos = localStorage.getItem('favoritos')
 
-    if(storageFavs !== null){
-      let favsParseados = JSON.parse(storageFavs)
+    if(guardarFavoritos !== null){
+      let favoritosParseados = JSON.parse(guardarFavoritos)
       Promise.all(
-        favsParseados.map( id => 
+        favoritosParseados.map( id => 
             fetch('https://api.themoviedb.org/3/movie/' + id)
             .then( resp => resp.json())
           )
@@ -31,13 +34,11 @@ class Favoritos extends Component {
     
   }
 
-  
-
-
-  actualizarState(id){
-    let stateActualizado = this.state.favoritos.filter(elm => elm.id !== id)
+  actualizarEstado(id)
+  {
+    let actulizacionEstado = this.state.favoritos.filter(elm => elm.id !== id)
     this.setState({
-      favoritos: stateActualizado
+      favoritos: actulizacionEstado
     })
   }
   
@@ -45,8 +46,11 @@ class Favoritos extends Component {
    render() {
     return (
        <div>
-        <h1>Tus favoritos</h1>
-        <FavoritosContenedor actualizarState ={(id)=> this.actualizarState(id)} peliculas={this.state.favoritos}  />
+
+        <h1> Ver tus peliculas favoritas</h1>
+
+        <FavoritosContenedor actualizarEstado ={(id)=> this.actualizarEstado(id)} peliculas={this.state.favoritos}  />
+
       </div>
     )
    }
@@ -55,4 +59,4 @@ class Favoritos extends Component {
   
 }
 
-export default Favoritos
+export default Favoritos;

@@ -11,19 +11,15 @@
     font-size: 15px;
 }
 .button {
-    background-color: white; /* Fondo blanco */
-    color: black;
+    background-color: rgb(163, 134, 204); /* Fondo blanco */
+    color: rgb(255, 255, 255);
     margin-bottom: 4px;    
     margin-left: 10px; /* Para que quede mas lejos del campo */
     border: none; /* Sin borde */
     border-radius: 10px; /* Bordes redondeados */
     padding: 5px 20px; /* Espaciado interno para el botón */
     cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    text-decoration: none;
+    text-decoration: none
   }
-  /*--Responsive mobile last--*/
 
-/* Media Queries*/
 
-@media(max-width: 420px){
-}

@@ -1,6 +1,10 @@
 import { Component } from "react";
+
+import "./styles.css";
+
 import { Link } from "react-router-dom";
-import './styles.css'
+
+
 
 class Buscador extends Component{
     constructor(props) {
@@ -10,8 +14,10 @@ class Buscador extends Component{
           resultados: [] 
         };
       }
+
+
     
-      evitarSubmit(e) {
+      noSubmit(e) {
         e.preventDefault()
       }
     
@@ -24,18 +30,25 @@ class Buscador extends Component{
       }
     
     
+      
       render() {
         return (
-          <div className="">
-            <form className="" onSubmit={(e) => this.evitarSubmit(e)} >
+          <div className="formulario">
+            <form className="palabraBuscador" onSubmit={(e) => this.noSubmit(e)} >
+
               <input 
                 type="text"
+
                 placeholder="Ingresar busqueda"
+
                 onChange={(e) => this.regularCambios(e)} value={this.state.busqueda}
               />
-              {/* <input type= 'submit' value= 'Submit' /> */}
-              <Link to={`/search/${this.state.busqueda}`} className="button">Buscar</Link>
+              
+              
+            <Link to={`/buscar/${this.state.busqueda}`} className="button">Ver resultados</Link>
+
             </form>
+            
           </div>
     
         );

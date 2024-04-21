@@ -1,5 +1,8 @@
-import './styles.css'
-function Footer(){
+import "./styles.css";
+
+
+function Footer()
+{
     return(
         <footer>
         <ul className='footerNombres'>
@@ -11,4 +14,4 @@ function Footer(){
     )
 }
 
-export default Footer
+export default Footer;
