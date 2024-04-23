@@ -8,7 +8,7 @@ class Peliculas extends Component {
         this.state = {
             valor: '',
             mostrar: false,
-            mensaje: 'Ver descripcion',
+            mensaje: 'Desplegar descripcion',
             estaEnFavoritos: false
         }
     }
@@ -30,7 +30,7 @@ class Peliculas extends Component {
 
     descripcion() {
         const mostrar = !this.state.mostrar;
-        const mensaje = mostrar ? "Ocultar descripcion" : "Ver descripcion";
+        const mensaje = mostrar ? "Ocultar descripcion" : "Desplegar descripcion";
         this.setState({ mostrar, mensaje });
     }
 
@@ -62,9 +62,9 @@ class Peliculas extends Component {
                 <p className="descripcionOculta" onClick={() => this.descripcion()}>{this.state.mensaje}</p>
                 {this.state.mostrar ? <h5 className="resumen">{this.props.resumen}</h5> : null}
                 <Link to={`/PeliculaDetalle/id/${this.props.id}`}>
-                    <button className="verMas">Ir a detalle</button>
+                    <button className="buttonStyle">Ir a detalle</button>
                 </Link>
-                <button onClick={() => this.Favorito()}>
+                <button className='buttonStyle'   onClick={() => this.Favorito()}>
                     {this.state.estaEnFavoritos ? "Quitar de Favoritos" : "Agregar a Favoritos"}
                 </button>
             </article>

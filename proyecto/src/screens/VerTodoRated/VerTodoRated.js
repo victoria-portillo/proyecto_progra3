@@ -4,6 +4,7 @@ import { options } from "../../utils/constants";
 
 import VerTodoPeliculas from "../../components/VerTodoPeliculas/VerTodoPeliculas";
 
+import "./style.css";
 
 let claveApi= "7d4b7de655aa19e767e9ef8b0e0359b5";
 
@@ -54,7 +55,7 @@ render(){
     <VerTodoPeliculas movies={this.state.pelicula} cargarPelis={() => this.cargarPelis()} />
     <p>Página actual: {this.state.pagina}</p>
     <section>
-    <button onClick={() => this.cargarPelis()}>Cargar más películas</button>
+    <button className='botonExplorar'  onClick={() => this.cargarPelis()}>Cargar más películas</button>
     </section>
     <br></br>
     </>

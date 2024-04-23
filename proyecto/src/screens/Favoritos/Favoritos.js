@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import "./style.css";
+
 import FavoritosContenedor from "../../components/FavoritosContenedor/FavoritosContenedor";
 
 
@@ -39,7 +41,7 @@ class Favoritos extends Component {
   render() {
     return (
       <div>
-        <h1>Ver tus peliculas favoritas</h1>
+        <h1 className='tituloFavs'  >Ver tus peliculas favoritas</h1>
         <FavoritosContenedor 
           actualizarEstado={this.actualizarEstado} 
           peliculas={this.state.favoritos}  

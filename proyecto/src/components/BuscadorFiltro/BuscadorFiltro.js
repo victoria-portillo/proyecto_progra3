@@ -31,11 +31,11 @@ class BuscadorFiltro extends Component {
     render() 
      { return (<>
 
-            <form className="formulario" onSubmit={(e)=> this.noSubmit(e)}>
+            <form className="form" onSubmit={(e)=> this.noSubmit(e)}>
 
             <input className="busqueda" placeholder="Ingresar busqueda" type="text" onChange={(e)=>this.regularCambios(e)} value={this.state.palabraClave} />
 
-            <button className='button'>Buscar</button>
+            <button className='botonBusqueda'> Ver resultados </button>
             
             </form>
             </>

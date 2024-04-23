@@ -1,4 +1,4 @@
-.formulario{
+.form{
     width: 60%;
     margin: 0 auto;
     text-align: center;
@@ -6,20 +6,22 @@
     border-radius: 5px;
     height: 35px;
 }
-.palabraBuscador{
-    font-family: sans-serif;
-    font-size: 15px;
-}
-.button {
-    background-color: rgb(163, 134, 204); /* Fondo blanco */
+
+.botonBusqueda {
+    background-color: #6856aa;
     color: rgb(255, 255, 255);
     margin-bottom: 4px;    
-    margin-left: 10px; /* Para que quede mas lejos del campo */
-    border: none; /* Sin borde */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 5px 20px; /* Espaciado interno para el botón */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    margin-left: 10px; 
+    border: none; 
+    border-radius: 10px; 
+    padding: 5px 20px;
+    cursor: pointer; 
     text-decoration: none
   }
+
+.busqueda{
+    font-family: Georgia ;
+    font-size: 18px;
+}
 
 

@@ -1,0 +1,4 @@
+.app-container {
+    background-color: white; /* Asegura que el fondo sea blanco */
+    min-height: 100vh; /* Opcional: asegura que el contenedor llene al menos la pantalla completa */
+}

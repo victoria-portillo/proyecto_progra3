@@ -1,9 +1,14 @@
 import React from 'react';
 
+import "./style.css";
+
 function index() 
 {
   return (
-    <div>ERROR 404</div>
+    <div  className='errorContenedor'>
+     <p className='textoError' >  ERROR 404  </p> 
+      
+      </div>
   ) 
 };
 

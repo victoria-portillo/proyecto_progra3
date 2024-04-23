@@ -1,0 +1,15 @@
+.errorContenedor{
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 600px;
+    box-sizing: border-box;
+}
+
+.textoError{
+    text-align: center;
+    font-size: 100px;
+    color: blueviolet;
+}

@@ -10,8 +10,6 @@ import BuscadorFiltro from '../BuscadorFiltro/BuscadorFiltro';
 
 let claveApi= "7d4b7de655aa19e767e9ef8b0e0359b5";
 
-let api= `https://api.themoviedb.org/3/movie/76341?api_key=${claveApi}`;
-
 let popular = `https://api.themoviedb.org/3/movie/popular?api_key=${claveApi}&language=en-US&page=1`;
 
 
@@ -54,7 +52,7 @@ class VerTodoPeliculas extends Component {
   }
   
   pelisFiltrador(titulo){
-    const convertirMin = titulo.toLowerCase(); // Convertir el filtro a minúsculas
+    const convertirMin = titulo.toLowerCase(); 
     if ( convertirMin === '') {
       this.setState({
         filtro: this.state.peliculas,
@@ -62,11 +60,11 @@ class VerTodoPeliculas extends Component {
       });
     } else {
     
-    let filtroPeliculas = this.state.filtro.filter((elm)=> elm.titulo.toLowerCase().includes(convertirMin))
-    console.log(filtroPeliculas);
+    let filtroPeliculas = this.state.filtro.filter((elm)=> elm.title.toLowerCase().includes(convertirMin))
+  
     this.setState({
         filtro: filtroPeliculas,
-        filtroBusqueda: titulo, // Actualiza el filtro de búsqueda en el estado
+        filtroBusqueda: titulo, 
     })}
 }
 

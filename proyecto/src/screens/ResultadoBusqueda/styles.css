@@ -9,14 +9,19 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+.loader{
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  
+  }
 body{
     margin: 0;
     background-color: black;
-    color: white;
+    color: rgb(0, 0, 0);
 } 
-/*--Responsive mobile last--*/
 
-/* Media Queries*/
 
 @media(max-width: 420px){
 }

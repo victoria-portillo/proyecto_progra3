@@ -35,9 +35,9 @@ class PeliculasTopRated extends Component {
 
   render() {
     return (
-      <section className="cajapadre" id="peliculasPopu">
+      <section className="cajapadre"  >
       {this.state.peliculas.length === 0 ? (
-          <img src="../img/giphy.gif" alt="Cargando" />
+          <img className='loader' src="../img/giphy.gif" alt="Cargando" />
         ) : (
           this.state.peliculas.slice(0, 5).map((pelicula) => (
             <Peliculas

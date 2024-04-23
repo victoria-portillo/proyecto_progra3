@@ -1,12 +1,15 @@
 import React from 'react';
+
 import "./style.css";
+
 import { Link } from 'react-router-dom';
+
 
 function Header() {
   return (
     <header>
       <nav className="navh">
-        <img src="../img/panda.png" className="logo" alt="pandaLogo" />
+        <img src="../img/logoPelis.jpg" className="logo" alt="logoPelis" />
         <div className="headera">
           <Link to="/"><h1>Home</h1></Link>
           <Link to="/Favoritos"><h1>Favoritos</h1></Link>

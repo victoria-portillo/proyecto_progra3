@@ -41,10 +41,10 @@ class Home extends Component {
           <main> </main> :
           <main><VerTodoPeliculas peli={this.state.busqueda} /></main>
         }
-        <h2 className='subtitulo'>Peliculas populares <Link to='/VerTodoPelis'><button className='botonExplorar'>Explorar todas</button></Link></h2>
+        <h2 className='subtituloHome'>Peliculas populares <Link to='/VerTodoPelis'><button className='botonExplorar'>Explorar todas</button></Link></h2>
         <PeliculasContenedor />
         
-        <h2 className='subtitulo'>Peliculas Top Rated <Link to='/VerTodoRated'><button className='botonExplorar'>Explorar todas</button></Link></h2>
+        <h2 className='subtituloHome'>Peliculas Top Rated <Link to='/VerTodoRated'><button className='botonExplorar'>Explorar todas</button></Link></h2>
         <PeliculasTopRated  />
       </section>
     );

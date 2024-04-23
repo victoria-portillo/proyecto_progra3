@@ -10,11 +10,12 @@ import NotFound from './screens/NotFound/NotFound';  // Asegúrate de que la rut
 import VerTodoPelis from './screens/VerTodoPelis/VerTodoPelis';
 import VerTodoRated from './screens/VerTodoRated/VerTodoRated';
 import Favoritos  from './screens/Favoritos/Favoritos';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="app-container"  >
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />

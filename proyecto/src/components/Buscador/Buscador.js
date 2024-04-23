@@ -33,19 +33,13 @@ class Buscador extends Component{
       
       render() {
         return (
-          <div className="formulario">
-            <form className="palabraBuscador" onSubmit={(e) => this.noSubmit(e)} >
+          <div className="form">
+            <form className="busqueda" onSubmit={(e) => this.noSubmit(e)} >
 
-              <input 
-                type="text"
-
-                placeholder="Ingresar busqueda"
-
-                onChange={(e) => this.regularCambios(e)} value={this.state.busqueda}
-              />
+              <input type="text" placeholder="Ingresar busqueda" onChange={(e) => this.regularCambios(e)} value={this.state.busqueda}/>
               
               
-            <Link to={`/buscar/${this.state.busqueda}`} className="button">Ver resultados</Link>
+            <Link to={`/buscar/${this.state.busqueda}`} className="botonBusqueda">Ver resultados</Link>
 
             </form>
             
@@ -57,4 +51,4 @@ class Buscador extends Component{
     
     }
     
-export default Buscador
+export default Buscador;

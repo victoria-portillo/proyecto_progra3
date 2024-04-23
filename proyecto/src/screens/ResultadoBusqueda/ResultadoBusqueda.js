@@ -53,7 +53,7 @@ class ResultadoBusqueda extends Component {
                             )                        
                         }
                         </ul> :
-                                                  <img src= "../img/giphy.gif" alt="Trayendo Peliculas" /> 
+                          <img className="loader"  src= "../img/giphy.gif" alt="Trayendo Peliculas" /> 
                                               
                 }
             </>

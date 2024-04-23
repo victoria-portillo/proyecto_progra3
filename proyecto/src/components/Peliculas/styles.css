@@ -6,28 +6,28 @@ article {
   padding: 20px;
   margin: 20px;
   width: 60%;
-  max-width: 200px; /* Ajusta al tamaño deseado */
-  background-color: #f8f9fa; /* Fondo claro */
-  color: #212529; /* Texto oscuro */
+  max-width: 200px; 
+  background-color: #f8f9fa; 
+  color: #212529; 
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-  transition: transform 0.3s; /* Transición suave para hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  transition: transform 0.3s; 
 }
 
 article:hover {
-  transform: translateY(-5px); /* Elevación ligera al pasar el mouse */
+  transform: translateY(-5px); 
 }
 
 img {
-  width: 100%; /* Responsive width */
-  height: auto; /* Mantener la proporción */
-  border-radius: 8px; /* Bordes redondeados para la imagen */
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 .nombrePeli {
   margin-top: 10px;
   font-weight: bold;
-  font-size: 18px; /* Tamaño de fuente más grande */
+  font-size: 18px; 
   text-align: center;
 }
 
@@ -35,27 +35,43 @@ img {
   margin-top: 10px;
   cursor: pointer;
   padding: 8px;
-  background-color: #e9ecef; /* Fondo gris claro */
-  color: #495057; /* Texto gris oscuro */
+  background-color: #6856aa; 
+  color: #ffffff; 
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s;
 }
 
+.buttonStyle {
+  background-color: #6856aa;
+  color: rgb(255, 255, 255);
+  margin-bottom: 4px;    
+  margin-left: 10px; 
+  border: none; 
+  border-radius: 10px; 
+  padding: 5px 20px;
+  cursor: pointer; 
+  text-decoration: none
+}
+
+.buttonStyle:hover {
+  background-color: #3e21a8;
+}
+
 .descripcionOculta:hover {
-  background-color: #ae58c4; /* Cambio de color al pasar el mouse */
+  background-color: #3e21a8; 
 }
 
 .resumen {
   margin-top: 10px;
   font-size: 16px;
   text-align: center;
-  color: #343a40; /* Texto un poco más oscuro */
+  color: #343a40; 
 }
 
-.verMas {
+.irDetalle {
   margin-top: 15px;
-  background-color: #9638b3; /* Azul brillante */
+  background-color: #6856aa;
   color: white;
   border: none;
   border-radius: 8px;
@@ -65,11 +81,11 @@ img {
   transition: background-color 0.3s;
 }
 
-.verMas:hover {
-  background-color: #a84cb4; /* Azul más oscuro al pasar el mouse */
+.irDetalle:hover {
+  background-color: #3e21a8; 
 }
 
-/* Media Queries para adaptar a dispositivos móviles */
+
 @media (max-width: 600px) {
   article {
     padding: 15px;
