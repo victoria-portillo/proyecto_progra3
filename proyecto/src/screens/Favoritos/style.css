@@ -22,9 +22,3 @@ body{
     background-color: black;
     color: white;
 } 
-/*--Responsive mobile last--*/
-
-/* Media Queries*/
-
-@media(max-width: 420px){
-}

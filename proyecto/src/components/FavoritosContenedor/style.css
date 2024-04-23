@@ -9,15 +9,6 @@
 
 
 
-.favoritosContenedor{
-    display: flex;  
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 1000px;
-    box-sizing: border-box;
-}
 
 .loader{
 align-items: center;
@@ -42,4 +33,23 @@ body{
     margin: 0;
     background-color: black;
     color: white;}
- 
+.favoritosContenedor {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  align-items: flex-start; 
+  width: 100%; 
+}
+
+@media (max-width: 768px) {
+  .favoritosContenedor {
+      flex-direction: column;  
+      align-items: center; 
+  }
+}
+
+
+.favoritosContenedor .Peliculas {
+  width: 100%;
+  margin-bottom: 20px; 
+}

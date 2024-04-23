@@ -31,9 +31,3 @@ body{
 .buttonStyle:hover {
   background-color: #3e21a8;
 }
-/*--Responsive mobile last--*/
-
-/* Mediac Queries*/
-
-@media(max-width: 420px){
-}
